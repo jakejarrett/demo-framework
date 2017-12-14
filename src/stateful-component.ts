@@ -18,7 +18,7 @@ export default class StatefulComponent extends Component {
 
     set state (state: Object) {
         /** Add the state to a previous state object. */
-        this.__previousState.push(Object.assign({}, this.__state);
+        this.__previousState.push(Object.assign({}, this.__state));
 
         Object.keys(state).map(value => {
             this.__state[value] = state[value];
