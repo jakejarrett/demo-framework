@@ -1,7 +1,7 @@
 import { HTMLModifier, Component } from './src/index';
 
 const first_component = new Component({
-    type: "html",
+    type: "string",
     contents: '<p>Hello world</p>',
     identifier: "#hello"
 });
