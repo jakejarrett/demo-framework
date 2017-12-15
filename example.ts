@@ -3,7 +3,7 @@ import { HTMLModifier, Component } from './src/index';
 const first_component = new Component({
     type: "html",
     contents: '<p>Hello world</p>',
-    el_identifier: "#hello"
+    identifier: "#hello"
 });
 
 const second_component = new Component({
