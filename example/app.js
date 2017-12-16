@@ -1,6 +1,4 @@
-import Component from '../build/component.js';
-import StatefulComponent from '../build/stateful-component.js';
-import HTMLModifier from '../build/html-modifier.js';
+import { Component, StatefulComponent, HTMLModifier } from '../build/index.min.js';
 
 const Counter = new StatefulComponent({
     type: "string",
