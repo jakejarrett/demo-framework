@@ -14,7 +14,7 @@ const Counter = new StatefulComponent({
 
 const second_component = new Component({
     type: "html",
-    contents: `<p>hello</p><section id="hello"></section>`,
+    contents: `<p>hello</p><section id="counter" style="color:#c0ffee"></section>`,
     children: [Counter]
 });
 
