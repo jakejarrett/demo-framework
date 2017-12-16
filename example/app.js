@@ -23,7 +23,5 @@ HTMLModifier.render(second_component);
 window.setInterval(_ => {
     const new_number = Counter.state.count + 1 || 0;
     Counter.state = { count: new_number }
-
     HTMLModifier.render(second_component);
-
 }, 1000);
