@@ -14,6 +14,12 @@ I just wanted to experiment with the idea of making a framework where i could ge
 * Modular
 * Typescript definitions
 
+### Missing Features
+* Render guards on stateless components (shouldComponentRender)
+* Most lifecycle methods found in react-like frameworks
+* Eventing (BYO Events, just override the state getter/setter in Stateful component)
+* JSX Support (Probably achievable, but wasn't built with it in mind.)
+
 ## In Progress
 * Profile the framework
 * Write a basic application with it
@@ -22,3 +28,4 @@ I just wanted to experiment with the idea of making a framework where i could ge
 * Utilize a bundler
 * Come up with a name
 * Simplify any pain points
+* Experiment with JSX Support
