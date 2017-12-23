@@ -4,7 +4,8 @@
   "description": "Demo Web Framework",
   "main": "src/index.js",
   "scripts": {
-    "build": "tsc --target ESNext ./src/*.ts --outDir ./build && uglifyjs build/*.js > build/index.min.js"
+    "build": "tsc --target ESNext ./src/*.ts --outDir ./build && uglifyjs build/*.js > build/index.min.js",
+    "minify": "uglifyjs build/index.__min__.js > build/index.min.js"
   },
   "author": "",
   "license": "MIT",

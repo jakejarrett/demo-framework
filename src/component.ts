@@ -1,18 +1,25 @@
 export default class Component {
-    public type:string = "string";
+    public type:string = "text";
     public identifier:string = "#root";
-    public el:HTMLElement = document.querySelector(this.identifier);
+    public el:HTMLElement =  <HTMLElement>document.querySelector(this.identifier);
     public contents:string = '';
     public children:Array<Component> = [];
 
     constructor (options: Object) {
-        Object.keys(options).map(option_key => {
-            this[option_key] = options[option_key];
-        });
+        Object.keys(options).map(option_key => this[option_key] = options[option_key]);
+    }
+
+    /**
+     * Should the component render
+     * 
+     * @returns {Boolean} True if component should render / re-paint.
+     */
+    public shouldComponentRender (comparator: any) : Boolean {
+        return true;
     }
 
     assert_node () {
-        this.el = document.body.querySelector(this.identifier);
+        this.el =  <HTMLElement>document.body.querySelector(this.identifier);
         if (this.el === null) {
             let el = document.createElement("div");
             if (this.identifier.indexOf("#") !== -1) {
@@ -21,7 +28,7 @@ export default class Component {
                 el.classList.add(this.identifier.split(".")[1]);
             }
             document.body.appendChild(el);
-            this.el = document.body.querySelector(this.identifier);
+            this.el =  <HTMLElement>document.body.querySelector(this.identifier);
         }
     }
 

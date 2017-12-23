@@ -1,4 +1,4 @@
-import Component from './component';
+import Component from './component.js';
 export default class StatefulComponent extends Component {
     constructor() {
         super(...arguments);
@@ -9,9 +9,6 @@ export default class StatefulComponent extends Component {
         this.__state = {};
         this.__previousState = [];
     }
-    /**
-     * Revert the state change so we're back in time.
-     */
     revert_state() {
         this.__state = this.__previousState[this.__previousState.length - 2];
     }
@@ -25,21 +22,11 @@ export default class StatefulComponent extends Component {
     get state() {
         return Object.assign({}, this.__state);
     }
-    /**
-     * Should the component render
-     * @param {Object} state - The current state at the time the component was going to render.
-     */
-    shouldComponentRender(state) {
+    shouldComponentRender() {
         return true;
     }
-    /**
-     * Render the component
-     *
-     * @param {string} value - The value to add into the rendered component.
-     * @returns {string} The stringified value to render
-     */
     render(value = null) {
-        if (this.shouldComponentRender(this.state)) {
+        if (this.shouldComponentRender()) {
             super.render(value);
         }
     }

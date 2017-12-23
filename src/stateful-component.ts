@@ -31,9 +31,8 @@ export default class StatefulComponent extends Component {
 
     /**
      * Should the component render
-     * @param {Object} state - The current state at the time the component was going to render.
      */
-    public shouldComponentRender (state: Object) : Boolean {
+    public shouldComponentRender (comparator: any) : Boolean {
         return true;
     }
 
