@@ -1,12 +1,12 @@
 export default class Component {
     public type:string = "text";
     public identifier:string = "#root";
-    public el:HTMLElement =  <HTMLElement>document.querySelector(this.identifier);
+    public el:HTMLElement = <HTMLElement>document.querySelector(this.identifier);
     public contents:string = '';
     public children:Array<Component> = [];
 
     constructor (options: Object) {
-        Object.keys(options).map(option_key => this[option_key] = options[option_key]);
+        for (const key in options) this[key] = options[key];
     }
 
     /**
@@ -28,7 +28,7 @@ export default class Component {
                 el.classList.add(this.identifier.split(".")[1]);
             }
             document.body.appendChild(el);
-            this.el =  <HTMLElement>document.body.querySelector(this.identifier);
+            this.el = <HTMLElement>document.body.querySelector(this.identifier);
         }
     }
 
